@@ -28,15 +28,15 @@ public class Main {
         int euphoris = 0;
         int comb = 0;
         int health = 30;
-        int dmg = 3;
+        int dmg = 9;
 
 
         ArrayList<Enemy> enems = new ArrayList<>();
 
-        enems.add(new Enemy("Glob", 12, 12, 12, 0));
-        enems.add(new Enemy("Oxilis", 20, 15, 13, 3));
-        enems.add(new Enemy("Metallic Golem", 30, 40, 3, 10));
-        enems.add(new Enemy("Fire Elemental", 15, 15, 15, 1));
+        enems.add(new Enemy("Glob", 12, 12, 5, 0));
+        enems.add(new Enemy("Oxilis", 20, 15, 5, 3));
+        enems.add(new Enemy("Metallic Golem", 30, 40, 3, 4));
+        enems.add(new Enemy("Fire Elemental", 15, 15, 4, 1));
 
         Scanner scan = new Scanner(System.in);
         System.out.println(ANSI_YELLOW + "Welcome to the HiveMind, an advanced civilization in a fantasy world. What will you call it? " + ANSI_RESET);
@@ -60,6 +60,65 @@ public class Main {
 
                 System.out.println(ANSI_RED + "An enemy stands in your way!" + ANSI_RESET);
                 enem.getStats();
+                int ehealth = enem.getHealth();
+                boolean run = false;
+
+                while (health != 0 || ehealth != 0 || run == false) {
+
+                    System.out.println("You have " + health + " health.");
+
+
+                    System.out.println("What would you like to do? (Write atk, or run)");
+                    Scanner escan = new Scanner(System.in);
+
+                    if (escan.hasNext("atk")) {
+
+                        System.out.println("You deal " + dmg + " damage to the enemy!");
+                        ehealth -= dmg;
+                        System.out.println("Enemy health: " + ehealth);
+                        System.out.println("Your health: " + health);
+
+
+                    } else if (escan.hasNext("run")) {
+
+                        int x = rand.nextInt(4);
+
+                        if (x == 0) {
+                            System.out.println("You run away! You didn't get any euphoris. :(");
+                            run = true;
+                            break;
+                        } else {
+                            System.out.println("You fail to run away! You have to keep fighting!");
+                        }
+
+                    }
+
+                    System.out.println("The enemy attacks for " + enem.getDamage() + " damage!");
+                    health -= enem.getDamage();
+                    System.out.println("Enemy health: " + ehealth);
+                    System.out.println("Your health: " + health);
+
+                    if (ehealth == 0 || ehealth < 0) {
+
+                        int y = rand.nextInt(10);
+                        y += 1;
+
+                        System.out.println("You won and got " + y + " euphoris!");
+                        euphoris += y;
+                        break;
+
+                    } else if (health == 0 || health < 0) {
+
+                        System.out.println("Ouch! You lost, and run back to your Hivemind. However, you lose all of your euphoris.");
+                        euphoris = 0;
+                        break;
+
+                    }
+
+
+
+
+                }
 
 
             } else if (scani.hasNext("BUILD")) {
