@@ -6,8 +6,8 @@ The game revolves around a civilization called the Hive Mind. The Hive Mind rese
 How the HiveMind works is also related to beehives. 
 
 ## How to Play
-In HiveMind, you gain ownership of the HiveMind Your main goal is to create enough comb, nodes of energy and power.
-The more comb you have, the mire you level up. Once you reach level 10, you beat the game.
+In HiveMind, you gain ownership of the HiveMind. Your main goal is to create enough comb, nodes of energy and power.
+The more comb you have, the more you level up. Once you reach level 10, you beat the game.
 However, there's a catch. In order to get comb, you need to get euphoris, a powerful substance from outside the HiveMind.
 When trying to get euphoris, enemies appear, and, because they want to destroy your HiveMind, try to deplete your euphoris by defeating you.
 If you beat them, you get your euphoris, but if they beat you, your euphoris level depletes.
