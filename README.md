@@ -1,4 +1,4 @@
-#HiveMind
+# HiveMind
 A game where you create an advanced civilization, made completely in pure Java 11.
 
 ## Story
