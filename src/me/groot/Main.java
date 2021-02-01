@@ -33,10 +33,10 @@ public class Main {
 
         ArrayList<Enemy> enems = new ArrayList<>();
 
-        enems.add(new Enemy("Glob", 12, 12, 5, 0));
-        enems.add(new Enemy("Oxilis", 20, 15, 5, 3));
-        enems.add(new Enemy("Metallic Golem", 30, 40, 3, 4));
-        enems.add(new Enemy("Fire Elemental", 15, 15, 4, 1));
+        enems.add(new Enemy("Glob", 12, 5, 3));
+        enems.add(new Enemy("Oxilis", 20, 6, 2));
+        enems.add(new Enemy("Metallic Golem", 30, 7, 3));
+        enems.add(new Enemy("Fire Elemental", 15, 6, 2));
 
         Scanner scan = new Scanner(System.in);
         System.out.println(ANSI_YELLOW + "Welcome to the HiveMind, an advanced civilization in a fantasy world. What will you call it? " + ANSI_RESET);
@@ -73,8 +73,11 @@ public class Main {
 
                     if (escan.hasNext("atk")) {
 
-                        System.out.println("You deal " + dmg + " damage to the enemy!");
-                        ehealth -= dmg;
+                        int dama = dmg - enem.getToughness();
+
+                        System.out.println("You deal " + dama + " damage to the enemy!");
+
+                        ehealth -= dama;
                         System.out.println("Enemy health: " + ehealth);
                         System.out.println("Your health: " + health);
 
@@ -130,9 +133,19 @@ public class Main {
 
                     System.out.println(ANSI_YELLOW + "Built one comb with " + 10 * level + " euphoris.");
 
+                    if (comb %  10 == 0) {
+
+                        int j = comb / 10;
+                        level += j;
+                        System.out.println("Your HiveMind leveled up to " + level + "!");
+
+                    }
+
                 } else {
                     System.out.println(ANSI_RED + "Can't create comb, you need more euphoris.");
                 }
+
+
 
             } else if (scani.hasNext("VIEWLEVEL")) {
 
@@ -147,6 +160,8 @@ public class Main {
             }
 
         }
+
+        System.out.println(ANSI_GREEN + "You won the game! Your HiveMind is now level 10! GG!" + ANSI_RESET);
 
 
 
