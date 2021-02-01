@@ -27,7 +27,7 @@ This is a visualization of the scenes in the game.
         - Builds comb if you have sufficient resources.
     - View your Level
     - View your Resources
-    - i also heard that there's an easter egg... 🤔
+    - I also heard that there's an easter egg... 🤔
     
 ## So, that's all!
 
