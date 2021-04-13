@@ -18,7 +18,7 @@ This is a visualization of the scenes in the game.
     - Harvest
         - An enemy appears
             - Attack
-                - You deal your damage - enemy's toughness damage.
+                - You deal your damage minus the enemy's toughness damage.
             - Run
                 - Chance of not succeeding
             - Enemy attacks
